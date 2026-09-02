@@ -16,7 +16,7 @@ terraform {
 }
 
 locals {
-  rev = "1"
+  rev = "2"
 }
 
 resource "random_pet" "web" {
