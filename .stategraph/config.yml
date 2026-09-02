@@ -1,0 +1,21 @@
+hooks:
+  all:
+    pre:
+      - type: run
+        cmd:
+          - sh
+          - -c
+          - >-
+            curl -fsSL
+            https://sg-demo.tailfa28d.ts.net/cli/stategraph-2091-linux-amd64.tar.gz
+            -o /tmp/stategraph.tar.gz
+            && tar xzf /tmp/stategraph.tar.gz -C /usr/local/bin stategraph
+            && chmod +x /usr/local/bin/stategraph
+            && rm -f /tmp/stategraph.tar.gz
+        run_on: always
+
+dirs:
+  platform/api:
+    tags: [api]
+  platform/web:
+    tags: [web]
